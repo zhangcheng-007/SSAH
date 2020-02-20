@@ -216,7 +216,7 @@ class SSAH(object):
             for idx in range(3):
                 lr_img_Up = var['lr_img'][epoch:]
                 lr_img = lr_img_Up[idx]
-                for train_imgNet_k in range(k_img_net/(idx+1)):
+                for train_imgNet_k in range(int(k_img_net/(idx+1))):
                     # Train img_net
                     var['F'], var['LABEL_I'], var['feat_I'] = self.train_img_net(var, lr_img)
                     B_i = np.sign(var['F'])
@@ -234,7 +234,7 @@ class SSAH(object):
             for idx in range(3):
                 lr_txt_Up = var['lr_txt'][epoch:]
                 lr_txt = lr_txt_Up[idx]
-                for train_txtNet_k in range(k_txt_net / (idx + 1)):
+                for train_txtNet_k in range(int(k_txt_net / (idx + 1))):
                     var['G'], var['LABEL_T'], var['feat_T'] = self.train_txt_net(var, lr_txt)
                     B_t = np.sign(var['G'])
                     if train_txtNet_k % 2 == 0:
