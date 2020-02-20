@@ -10,7 +10,7 @@ per_process_gpu_memory_fraction = 0.9
 
 # Initialize data loader
 MODEL_DIR = '/content/imagenet-vgg-f.mat'
-DATA_DIR = '/content/FLICKR-25K.mat'
+DATA_DIR = '/content/flickr25k.mat'
 
 phase = 'train'
 checkpoint_dir = './checkpoint'
