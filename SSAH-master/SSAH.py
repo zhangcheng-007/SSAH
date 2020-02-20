@@ -2,7 +2,7 @@ from setting import *
 from tnet import *
 import tensorflow as tf
 from ops import *
-from SSAH.SSAH-master.utils.calc_hammingranking import calc_map
+from utils.calc_hammingranking import calc_map
 import os
 import scipy.io as sio
 from tqdm import tqdm
