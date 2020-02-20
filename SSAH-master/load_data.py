@@ -7,7 +7,7 @@ def loading_data(path):
 	print('******************************************************')
 
 	file = h5py.File(path)
-	images = file['images'][:].transpose(0, 3, 2, 1)
+	images = file['IAll'][:].transpose(0, 3, 2, 1)
 	labels = file['LAll'][:].transpose()
 	tags = file['YAll'][:].transpose()
 	file.close()
