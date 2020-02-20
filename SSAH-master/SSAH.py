@@ -184,7 +184,7 @@ class SSAH(object):
                 for idx in range(2):
                     lr_lab_Up = var['lr_lab'][epoch:]
                     lr_lab = lr_lab_Up[idx]
-                    for train_labNet_k in range(k_lab_net/(idx+1)):
+                    for train_labNet_k in range(int(k_lab_net/(idx+1))):
                         # Train lab_net
                         var['H'], var['LABEL_L'], var['feat_L'] = self.train_lab_net(var, lr_lab)
                         var['B'] = np.sign(var['H'])
