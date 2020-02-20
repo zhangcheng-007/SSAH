@@ -295,7 +295,7 @@ class SSAH(object):
         LABEL_L = var['LABEL_L']
         batch_size = var['batch_size']
         num_train = self.train_L.shape[0]
-        for iter in tqdm(range(num_train / batch_size)):
+        for iter in tqdm(range(int(num_train / batch_size))):
             index = np.random.permutation(num_train)
             ind = index[0: batch_size]
             sample_L = self.train_L[ind, :]
@@ -322,7 +322,7 @@ class SSAH(object):
 
     def train_dis_net(self, lr):
         print ('update dis_net')
-        for iter in range(num_train / batch_size):
+        for iter in range(int(num_train / batch_size)):
             index = np.random.permutation(num_train)
             ind = index[0: batch_size]
             image = self.train_X[ind].astype(np.float64)
@@ -370,7 +370,7 @@ class SSAH(object):
         Feat_I = var['feat_I']
         batch_size = var['batch_size']
         num_train = self.train_X.shape[0]
-        for iter in tqdm(range(num_train / batch_size)):
+        for iter in tqdm(range(int(num_train / batch_size))):
             index = np.random.permutation(num_train)
             ind = index[0: batch_size]
             sample_L = train_L[ind, :]
@@ -412,7 +412,7 @@ class SSAH(object):
         LABEL_T = var['LABEL_T']
         batch_size = var['batch_size']
         num_train = self.train_Y.shape[0]
-        for iter in tqdm(range(num_train / batch_size)):
+        for iter in tqdm(range(int(num_train / batch_size))):
             index = np.random.permutation(num_train)
             ind = index[0: batch_size]
             sample_L = train_L[ind, :]
@@ -450,7 +450,7 @@ class SSAH(object):
             num_data = Modal.shape[0]
             index = np.linspace(0, num_data - 1, num_data).astype(int)
             B = np.zeros([num_data, bit], dtype=np.float32)
-            for iter in tqdm(range(num_data / batch_size + 1)):
+            for iter in tqdm(range(int(num_data / batch_size + 1))):
                 ind = index[iter * batch_size: min((iter + 1) * batch_size, num_data)]
                 label = Modal[ind, :].astype(np.float32)
                 label = label.reshape([label.shape[0], 1, label.shape[1], 1])
