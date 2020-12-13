@@ -1,2 +1,2 @@
 # SSAH
-cross modal retrieval
+cross modal retrieval on colab
